@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { React } from "react";
+import DiagnosisHistory from "./Components/DiagnosisHistory.js";
+import PatientInfo from "./Components/PatientInfo.js";
+import ContextAPI from "./ContextAPI/ContextAPI.js";
+import Patients from "./Components/Patients.js";
+import Navbar from "./Components/Navbar.js";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ContextAPI>
+      <div style={{ display: "flex", flexDirection: "column"}}>
+        <Navbar />
+        <div style={{ display: "flex", flexDirection: "row" }}>
+          <Patients />
+          <DiagnosisHistory />
+          <PatientInfo />
+        </div>
+      </div>
+    </ContextAPI>
   );
 }
 
